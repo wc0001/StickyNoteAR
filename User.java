@@ -1,3 +1,8 @@
+package StickyNoteAR;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
   String username;
   String password;
@@ -9,8 +14,12 @@ public class User {
     //store user in database.
   }
 
-  public static login(String username, password) {
+  public static User login(String username, String password) {
     //pseudocode
+    if (username not in database) {
+	    Sysmtem.out.println("User does not exist");
+	    return null;
+    }
     if (database.getPassword(username).equals(password)) {
       return database.getUser(username);
     } else {
